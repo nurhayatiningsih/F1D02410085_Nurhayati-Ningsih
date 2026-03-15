@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurhayati Ningsih - Profil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Nurhayati Ningsih</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                    <li><a href="page2.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-title">Halo, Saya Nurhayati Ningsih</h2>
+                    <p class="hero-subtitle">Mahasiswa Universitas Mataram</p>
+                    <p class="hero-description">
+                        Saya sedang berjuang untuk meraih cita-cita, masa depan yang saya impikan adalah
+                        membahagiakan kedua orang tua saya dengan menempuh pendidikan S1 di Universitas Mataram
+                        Fakultas Teknik Prodi Informatika.
+                    </p>
+                </div>
+               <div class="hero-image">
+                   <img src="assets/images/icih-photo.jpeg" alt="Foto Profil Nurhayati Ningsih" class="profile-img">
+               </div>
+            </section>
+
+            <section class="about" id="tentang">
+                <div class="container">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="about-text">
+                        Saya adalah seorang mahasiswi S1 Teknik Informatika di Universitas Mataram dengan minat besar di bidang pengembangan perangkat lunak dan teknologi web. Saat ini, saya sedang dalam proses belajar untuk menguasai pengembangan aplikasi berbasis web dan mobile. Saya percaya bahwa teknologi adalah alat untuk memecahkan masalah kompleks dan saya bersemangat untuk terus berkembang di bidang ini.
+                    </p>
+                    <table class="info-table">
+                        <tr>
+                            <td class="table-label">Nama</td>
+                            <td>Nurhayati Ningsih</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Status</td>
+                            <td>Mahasiswa</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Universitas</td>
+                            <td>Universitas Mataram</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Jurusan</td>
+                            <td>Teknik Informatika</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="kontak" class="contact">
+                <h3 class="section-title">Hubungi Saya</h3>
+                <form id="contactForm" class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="nama" class="form-label">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tanggal" class="form-label">Tanggal bertemu</label>
+                        <input type="date" id="tanggal" name="tanggal" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pesan" class="form-label">Pesan *</label>
+                        <textarea id="pesan" name="pesan" class="form-input" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+                <div id="formMessage" class="form-message hidden"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2024 Nurhayati Ningsih. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    formMessage.textContent = 'Pesan Anda telah terkirim! Saya akan segera menghubungi Anda.';
+                    formMessage.classList.remove('hidden'); 
+                    formMessage.classList.add('success'); 
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        formMessage.classList.add('hidden');
+                        formMessage.classList.remove('success');
+                        formMessage.textContent = ''; 
+                    }, 5000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
